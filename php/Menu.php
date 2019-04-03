@@ -5,7 +5,7 @@ class Menu {
 	private static $linkImage = "http://www.tieffeu.com/wordpress/wp-content/uploads/2019/03/noImg.png";
 	private static $linkImage404 = "http://www.tieffeu.com/wordpress/wp-content/uploads/2019/03/noImg2.jpg";
 
-	private function checkImage($img){
+	private static function checkImage($img){
 
 	  if (empty($img) || $img === NULL) {
 	    $string = self::$linkImage404;
@@ -17,7 +17,7 @@ class Menu {
 	  return $string;
 	}
 
-	private function addItem($itemNumber) {
+	private static function addItem($itemNumber) {
 	    $_itemNumber = 0;
 	    $linkImage = "<img src=".self::$linkImage.">";
 	    $_html = "";
@@ -31,7 +31,7 @@ class Menu {
 	}
 
 
-	private function checkMenuMinimo($arr) {
+	private static function checkMenuMinimo($arr) {
 
 	    if (count($arr)<6) {
 	        return self::addItem(6 - count($arr));
@@ -45,11 +45,11 @@ class Menu {
 	    return "";
 	}
 
-	private function closeMenu($_html) {
+	private static function closeMenu($_html) {
 		return "<ul>{$_html}</ul>";
 	}
 
-	private function menuConImg($value) {
+	private static function menuConImg($value) {
 		$html = "";
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'post');
 		$html .= "<img src='".self::checkImage($thumb)."'>";
@@ -58,12 +58,12 @@ class Menu {
 		return $html;
 	}
 
-	private function menuSenzaImg($value) {
+	private static function menuSenzaImg($value) {
 		$html = "<h5><span>".$value->post_title."</span></h5>";
 		return $html;
 	}
 
-	private function makeMenu($pages,$img) {
+	private static function makeMenu($pages,$img) {
 
 		$html = "";
 

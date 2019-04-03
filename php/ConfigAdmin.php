@@ -3,12 +3,12 @@
 
 class ConfigAdmin {
 
-	private function componenti() {
+	private static function componenti() {
 		add_theme_support( 'post-thumbnails' );
 		add_filter( 'use_default_gallery_style', '__return_false' );
 	}
 
-	private function nuovoMenu() {
+	private static function nuovoMenu() {
 		register_nav_menus(
 			array(
 			  'menuIndex' => __( 'Menu Index' )
@@ -16,13 +16,13 @@ class ConfigAdmin {
 		);
 	}
 	
-	private function removeMenu() {
+	private static function removeMenu() {
 		remove_menu_page('edit.php'); //post
 		remove_menu_page( 'edit-comments.php' );//Comments
 		remove_menu_page( 'tools.php' ); //Tools
 	}
 
-	private function registerWidget() {
+	private static function registerWidget() {
 
 		if (function_exists('register_sidebar')) {
 			  register_sidebar(array(
