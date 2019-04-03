@@ -1,0 +1,82 @@
+/* --------- footer --------- */
+footer {
+  position: relative;
+}
+
+.contatti {
+  position: relative;
+  color: white;
+  top: 10px;
+  min-width: 400px;
+  text-align: center;
+}
+
+.contatti a{
+  color: white;
+  text-decoration: none;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.contatti a span {
+  text-decoration: underline;
+}
+
+.contatti h2{
+  color: white;
+  font-size: 1.1em;
+  line-height: 1.1em;
+  text-align: center;  
+  padding-right: 1%;
+  margin: 0;
+  box-shadow: 20px 20px 20px 20px black;
+}
+
+.collegamenti {
+  position: relative;
+  top: 30px;
+}
+
+.collegamenti img {
+  width: auto;
+  height: 50px;
+}
+
+.coleg img {
+    background: white;
+    padding: 5px;
+}
+
+.collegamenti a {
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.coleg, 
+.social {
+  position: relative;
+  float: left;
+  width: 50%;
+  top: 0;
+  left: 0;
+  @include flex; 
+}
+
+.coleg {
+  justify-content: flex-start;
+}
+
+.social {
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 800px) {
+  .contatti h2{
+    font-size: 1em;
+    line-height: 1.1em;
+    text-align: center;  
+  }
+}
+
+@media screen and (max-width: 480px) {
+ 
+}

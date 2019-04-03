@@ -1,0 +1,94 @@
+/* ------- LAYOUT INDEX --------*/
+
+body {
+  @include fontNormaleG;
+  
+  background: url(../img/textura.png);
+
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  min-width: 480px;
+}
+
+.container {
+  position: relative;
+	@include flex;
+	flex-wrap: wrap;
+	width: 100%;
+  padding: 0;
+  margin: 0;
+
+}
+
+.top, .bottom, .middle, .middleInterno  {
+	@include flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+
+}
+
+.top {
+  height: 15vh;
+}
+
+.middle {
+	height: 65vh;
+  background-image: url(../img/sfondo2.jpg);
+  background-repeat: no-repeat;
+}
+
+.main {
+  position: relative;
+	width: 70%;
+  padding: 0;
+}
+
+
+@media screen and (max-width: 800px) {
+  .main {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main {
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+
+/* ------- LAYOUT INTERNO --------*/
+
+.middleInterno {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  @include flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 800px) {
+  .middleInterno {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .middleInterno {
+    max-width: 460px;
+  }
+}
+
+.sinistra {
+  width: 15%;
+}
+
+.destra {
+  width: 85%;
+}

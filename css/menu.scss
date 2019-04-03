@@ -1,0 +1,282 @@
+/* ---------- MENU ------------ */
+
+@mixin mainMenu() {
+    .menu-item {
+      list-style: none;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      /* Hide the text. */
+      color: rgba(0,0,0,0);
+    }
+
+    a {
+      display:inline-block;
+      width:100%;
+      height:0;
+      padding-bottom: 100%;
+    }
+}
+
+.menuIndex {
+  @include flex;
+  justify-content: flex-end;
+
+  ul {
+    width: 100%;
+    max-width: 680px;
+    min-width: 80px;
+    @include flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    flex: 1 0 21%;
+    margin: 5px;
+    height: 0;
+    @include square(21%);
+    }
+
+  @include mainMenu();
+
+}
+
+
+/* --------- Menu Interno -------- */
+
+.menuInterno {
+    @include flex;
+    width: 100%;
+    justify-content: center;
+
+    ul {
+      @include flex;
+      flex-direction: column;
+    }
+
+    li{
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+
+    @include mainMenu();
+
+}
+
+.buttomBack  {
+  position: relative;
+  width: 100%;
+  @include flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttomBack a{
+  position: relative;
+  padding: 5px;
+  width: 80px;
+  margin-bottom: 20px;
+  
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  background-color: rgba(89,89,89,0.5);
+  color: #d9d9d9;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+  .menuInterno {
+    li{
+      width: 70px;
+      height: 70px;
+    }
+  }
+  .buttomBack a {
+    width: 60px;
+    margin-bottom: 15px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 6px;
+
+    font-size: $font-base-size * 0.8;
+  }
+}
+
+/* --------- submenu -------- */
+
+/* h4 menu con image */
+/* h5 menu senza image */
+
+.submenu {
+  @include flex;
+  justify-content: center;
+
+  ul {
+      width: 100%;
+      max-width: 650px;
+      @include flex;
+      flex-wrap: wrap;
+  }
+
+  li{
+      position: relative;
+      flex: 1 0 30%;
+      padding-bottom: 30%;
+      margin: 5px;
+      border: 5px solid #148ba1;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+  }
+
+  a {
+      display:inline-block;
+      width:100%;
+      height:100%;
+  }
+
+  h4, h5 {
+      position: absolute;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0,153,255,0);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include flex;
+  }
+
+  h4 {
+    flex-direction:column;
+    justify-content: flex-end;
+  }
+
+  h4 span {
+      font-size: 1.3rem;
+      line-height: 1.3rem;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      text-shadow: -1px 0 0px #000000, 0 1px 0px #000000, 1px 0 0px #000000, 0 -1px 0 #000000;
+      text-align: center;
+      background-color: rgba(0, 20, 51, 0.6);
+  }
+
+  h5 {
+    justify-content: center;
+    align-items: center;
+    background: $sfondoColore;
+  }
+
+  h5 span {
+    padding: 5px;
+    text-align: center;
+    @include fontNormaleG;
+    font-size: 1.5rem;
+    color: #24ff00;
+    text-shadow: -1px 0 0px #bbbbbb, 0 1px 0px #bbbbbb, 1px 0 0px #bbbbbb, 0 -1px 0 #bbbbbb;
+  }
+
+ li:nth-child(1n) { border-color: #f3e40f; background: #fcf156;}
+ li:nth-child(2n) { border-color: #ee0300; background: #ff6664;}
+ li:nth-child(3n) { border-color: #07a2ff; background: #61d4ff;}
+ li:nth-child(4n) { border-color: #ffffff; background: #afafaf;}
+ li:nth-child(5n) { border-color: #fa13af; background: #ff8cda;}
+ li:nth-child(6n) { border-color: #008b00; background: #67ff67}
+
+ li:nth-child(1n) h4 { color: #f3e40f; }
+ li:nth-child(2n) h4 { color: #ee0300; }
+ li:nth-child(3n) h4 { color: #07a2ff; }
+ li:nth-child(4n) h4 { color: #ffffff; }
+ li:nth-child(5n) h4 { color: #fa13af; }
+ li:nth-child(6n) h4 { color: #008b00; }
+
+  li:hover h4{
+    background-color: rgba(0,153,255,0.3);
+  }
+
+}
+
+
+@media screen and (max-width: 800px) {
+  .submenu {
+    ul {
+      width: 80%;      
+    }
+    li{
+      border: 3px solid #148ba1;
+    }
+
+  } 
+
+}
+
+@media screen and (max-width: 480px) {
+  .submenu {
+    ul {
+      width: 70%;      
+    }
+    li{
+      border: 2px solid #148ba1;
+    }
+    h4 span {
+      font-size: 0.9rem;
+      line-height: 0.9rem;
+      text-shadow: none;
+      font-weight: bolder;
+    }
+    h5 span {
+      font-size: 0.9rem;
+      line-height: 0.9rem;
+      text-shadow: none;
+      font-weight: bolder;
+    }
+  } 
+}
+
+
+
+/*-------Effects Menu -------*/
+
+.flash2 {
+  -webkit-animation: flash ease 1s infinite;
+  animation: flash ease 1s infinite;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes flash {
+  0% { opacity: 1; } 
+  100% { opacity: 0.7; }
+}
+@keyframes flash {
+  0% { opacity: 1; } 
+  100% { opacity: 0.7; }
+}
+
+.flash {
+  animation: luz ease 1s infinite;
+  animation-direction: alternate;
+  background-color: rgba(239,230,13,0);
+  filter: brightness(150%);
+}
+
+@keyframes luz {
+  0% { 
+      background-color: rgba(239,230,13,0.7);
+      filter: brightness(100%);
+  }
+}

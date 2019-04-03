@@ -1,0 +1,48 @@
+// ------ Var ------- 
+
+$font-base: arial, sans-serif;
+$font-base-size: 1em;
+$font-base-color: #999999;
+
+$font-titolo-size: 3em;
+
+$line-height: 1em;
+
+$sfondoColore: #000000;
+
+// ------ mixin  ------- 
+@mixin fontNormaleG($misure: 1) {
+	font-family: $font-base;
+	font-size: $font-base-size * $misure;
+	line-height: $line-height;
+	color: $font-base-color;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin fontTitoloG($misure: 1) {
+	font-family: $font-base;
+	font-size: $font-titolo-size * $misure;
+	line-height: $line-height;
+	color: $font-base-color;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin flex {
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin square($x) {
+	width: $x;
+	padding-bottom: $x;
+}
+
+// ------  Content  ------ 
+
+@import 'layout';
+@import 'content';
+@import 'header';
+@import 'menu';
+@import 'footer';
