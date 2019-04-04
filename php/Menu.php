@@ -88,22 +88,29 @@ class Menu {
 	   
 	}
 
-	public static function getMenuImg($pages) {
-		return self::makeMenu($pages,true);
+	public static function getMenuImg() {
+		global $post;
+    	$mypages = get_pages('parent='.$post->ID.'&sort_column=menu_order');
+
+		echo self::makeMenu($mypages,true);
 	}
 
-	public static function getMenuSenzaImg($pages) {
-		return self::makeMenu($pages,false);
+	public static function getMenuSenzaImg() {
+		global $post;
+    	$mypages = get_pages('parent='.$post->ID.'&sort_column=menu_order');
+
+		echo self::makeMenu($mypages,false);
 	}
 
-	public static function getMenuBack($post) {
+	public static function getMenuBack() {
+		global $post;
 
 	    if ($post->post_parent) {
 	        //echo "<a href=".get_home_url().">< Home</a>";
-	        return "<a href=".get_permalink( $post->post_parent ).">< Indietro</a>";
+	        echo "<a href=".get_permalink( $post->post_parent ).">< Indietro</a>";
 	    }
 	    else {
-	        return "<a href=".get_home_url().">< Home</a>";
+	        echo "<a href=".get_home_url().">< Home</a>";
 	    }
 
 	}
