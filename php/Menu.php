@@ -47,7 +47,9 @@ class Menu {
 	}
 
 	private static function closeMenu($_html) {
-		return "<ul>{$_html}</ul>";
+		$html = "<div class='submenu'><ul>{$_html}</ul></div>";
+		$html .= "<script type='text/javascript'> checkMisure(); </script>";
+		return $html;
 	}
 
 	private static function changeHtml($phrase,$hook,$html) {

@@ -39,16 +39,16 @@ function divideParola(string, index, replace) {
 }
 
 var countString = function (arrayParole) {
-    var check = false;
+    var check = 0;
     var numeroMaximo = 11;
-    var inte = "- ";
 
     for (var i = 0; i < arrayParole.length; i++) {
         
-        if (arrayParole[i].length > numeroMaximo) { 
-          //var stringR = divideParola(arrayParole[i], numeroMaximo, inte);
+        //check = arrayParole[i].length - numeroMaximo;
 
-          check = true;
+        //if (arrayParole[i].length > numeroMaximo) { 
+        if (check < arrayParole[i].length - numeroMaximo) {
+          check = arrayParole[i].length - numeroMaximo;
         }
     }
 
@@ -61,9 +61,12 @@ var checkMisure = function () {
 
   for(var i=0; i<elements.length; i++) {
       var arrayParole = divideStringInParole(elements[i].textContent);
-      
-      if (countString(arrayParole)) {
-        elements[i].style = 'font-size: 1rem;'
+      var check = countString(arrayParole);
+
+      if (check>1) {
+        var size = 1.5 - (check * 0.07);
+        if (size < 1) { size = 1;}
+        elements[i].style = 'font-size:' + size + 'rem;';
       }
   }
 

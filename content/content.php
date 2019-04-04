@@ -10,10 +10,9 @@
     <div class="content">
 
         <?php
-            $showMenu = 1;
             the_content(); 
         ?>
-        
+
     </div>
 
 <?php
