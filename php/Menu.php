@@ -47,7 +47,9 @@ class Menu {
 	}
 
 	private static function closeMenu($_html) {
-		return "<ul>{$_html}</ul>";
+		$html = "<div class='submenu'><ul>{$_html}</ul></div>";
+		$html .= "<script type='text/javascript'> checkMisure(); </script>";
+		return $html;
 	}
 
 	private static function changeHtml($phrase,$hook,$html) {
@@ -89,6 +91,8 @@ class Menu {
 	}
 
 	public static function getMenuImg() {
+		if ( is_admin()){ return;}
+		
 		global $post;
     	$mypages = get_pages('parent='.$post->ID.'&sort_column=menu_order');
 
@@ -96,6 +100,8 @@ class Menu {
 	}
 
 	public static function getMenuSenzaImg() {
+		if ( is_admin()){ return;}
+
 		global $post;
     	$mypages = get_pages('parent='.$post->ID.'&sort_column=menu_order');
 
@@ -103,6 +109,8 @@ class Menu {
 	}
 
 	public static function getMenuBack() {
+		if ( is_admin()){ return;}
+
 		global $post;
 
 	    if ($post->post_parent) {
