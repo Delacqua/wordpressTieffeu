@@ -89,6 +89,8 @@ class Menu {
 	}
 
 	public static function getMenuImg() {
+		if ( is_admin()){ return;}
+		
 		global $post;
     	$mypages = get_pages('parent='.$post->ID.'&sort_column=menu_order');
 
@@ -96,6 +98,8 @@ class Menu {
 	}
 
 	public static function getMenuSenzaImg() {
+		if ( is_admin()){ return;}
+
 		global $post;
     	$mypages = get_pages('parent='.$post->ID.'&sort_column=menu_order');
 
@@ -103,6 +107,8 @@ class Menu {
 	}
 
 	public static function getMenuBack() {
+		if ( is_admin()){ return;}
+
 		global $post;
 
 	    if ($post->post_parent) {
