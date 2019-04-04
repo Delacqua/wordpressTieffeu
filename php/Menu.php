@@ -2,8 +2,9 @@
 
 class Menu {
 
-	private static $linkImage = "http://www.tieffeu.com/wordpress/wp-content/uploads/2019/03/noImg.png";
-	private static $linkImage404 = "http://www.tieffeu.com/wordpress/wp-content/uploads/2019/03/noImg2.jpg";
+	private static $linkImage = linkImage;
+	private static $linkImage404 = linkImage404;
+	private static $hook1 = hook1;
 
 	private static function checkImage($img){
 
@@ -49,17 +50,23 @@ class Menu {
 		return "<ul>{$_html}</ul>";
 	}
 
+	private static function changeHtml($phrase,$hook,$html) {
+		return str_replace($hook,$html,$phrase);
+	}
+
 	private static function menuConImg($value) {
 		$html = "";
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'post');
 		$html .= "<img src='".self::checkImage($thumb)."'>";
-		$html .= "<h4><span class='textMenu'>".$value->post_title."</span></h4>";
+		$title = self::changeHtml($value->post_title, self::$hook1,'<br/>');
+		$html .= "<h4><span class='textMenu'>".$title."</span></h4>";
 
 		return $html;
 	}
 
 	private static function menuSenzaImg($value) {
-		$html = "<h5><span class='textMenu'>".$value->post_title."</span></h5>";
+		$title = self::changeHtml($value->post_title,self::$hook1,'<br/>');
+		$html = "<h5><span class='textMenu'>".$title."</span></h5>";
 		return $html;
 	}
 

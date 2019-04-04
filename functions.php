@@ -1,11 +1,8 @@
 <?php
 
+include_once 'php/autoload.php';
+
 // Wordpress ------
-
-require 'php/ConfigAdmin.php';
-require 'php/Shortcode.php';
-require 'php/Shortcodes.php';
-
 
 function loadInit() {
     ConfigAdmin::loadInit();
@@ -57,10 +54,6 @@ function jquery_migrate_echo_silencer() {echo jquery_migrate_silencer();}
 
 // Theme Functions -------
 
-require 'php/Config.php';
-require 'php/Menu.php';
-
-
 function loadConfig() {
     Config::loadScripts();
 }
@@ -97,10 +90,6 @@ function backMenuInterno() {
 
 }
 
-function salta( $atts ){
-    return "hello";
-}
-
 function addShort() {
     add_shortcode('menu_image','menuImage');
     add_shortcode('menu_senza_image', 'menuSenzaImage');
@@ -108,6 +97,5 @@ function addShort() {
 }
 
 add_action( 'init', 'addShort' );
-
 
 //$shortcodes = new Shortcodes($post);
