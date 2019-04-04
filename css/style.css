@@ -443,6 +443,8 @@ header {
     flex-direction: column;
     justify-content: flex-end; }
   .submenu h4 span {
+    max-width: 100%;
+    max-height: 100%;
     font-size: 1.3rem;
     line-height: 1.3rem;
     padding-bottom: 5px;
@@ -455,6 +457,8 @@ header {
     align-items: center;
     background: #000000; }
   .submenu h5 span {
+    max-width: 100%;
+    max-height: 100%;
     padding: 5px;
     text-align: center;
     font-family: arial, sans-serif;

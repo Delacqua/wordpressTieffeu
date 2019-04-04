@@ -4,7 +4,6 @@
 
 <?php $home = get_template_directory_uri(); ?>
 
-
     <div class="container">
         
         <div class="top">
@@ -52,6 +51,10 @@
         </div>
 
     </div>
+
+<script type="text/javascript">
+   checkMisure();
+</script>
 
   
 <?php get_footer(); ?>

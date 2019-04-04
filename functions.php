@@ -97,6 +97,10 @@ function backMenuInterno() {
 
 }
 
+function salta( $atts ){
+    return "hello";
+}
+
 function addShort() {
     add_shortcode('menu_image','menuImage');
     add_shortcode('menu_senza_image', 'menuSenzaImage');

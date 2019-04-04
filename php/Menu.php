@@ -53,13 +53,13 @@ class Menu {
 		$html = "";
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'post');
 		$html .= "<img src='".self::checkImage($thumb)."'>";
-		$html .= "<h4><span>".$value->post_title."</span></h4>";
+		$html .= "<h4><span class='textMenu'>".$value->post_title."</span></h4>";
 
 		return $html;
 	}
 
 	private static function menuSenzaImg($value) {
-		$html = "<h5><span>".$value->post_title."</span></h5>";
+		$html = "<h5><span class='textMenu'>".$value->post_title."</span></h5>";
 		return $html;
 	}
 
