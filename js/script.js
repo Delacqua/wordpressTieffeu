@@ -1,3 +1,4 @@
+//Buttom go top
 var scrollFunc = function () {
     var y = window.scrollY;
     if (y >= 800) {
@@ -7,6 +8,7 @@ var scrollFunc = function () {
     }
 };
 
+// -----
 
 var countString2 = function () {
   var node = document.getElementById('textMenu'),
@@ -17,6 +19,7 @@ var countString2 = function () {
   console.log(res);
 };
 
+// Submenu - aggiusta parole  
 function prendeElement(nomeClasse) {
   return document.getElementsByClassName("textMenu");
 }
@@ -65,3 +68,4 @@ var checkMisure = function () {
   }
 
 };
+// ----

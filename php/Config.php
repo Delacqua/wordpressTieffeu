@@ -16,4 +16,10 @@ class Config {
 		self::loadStyles();
 		self::loadJavascript();
 	} 
+
+	public static function loadShortcodes() {
+	    add_shortcode('menu_image', array("Menu", 'getMenuImg'));
+	    add_shortcode('menu_senza_image', array("Menu", 'getMenuSenzaImg'));
+	    add_shortcode('back_menu_interno', array("Menu", 'getMenuBack'));
+	} 
 }

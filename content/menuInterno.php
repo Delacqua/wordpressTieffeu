@@ -1,5 +1,5 @@
 <div class="buttomBack">
-	<?php backMenuInterno(); ?>
+	<?php do_shortcode('[back_menu_interno]'); ?>
 </div>
 
 

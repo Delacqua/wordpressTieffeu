@@ -12,7 +12,7 @@ function autoload($class) {
 
     foreach($cartelle as $cartella) {
       if (file_exists($cartella.$class . '.php')) {
-          require_once $cartella.$class . '.php'; 
+          include_once $cartella.$class . '.php'; 
         } 
     }
 }

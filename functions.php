@@ -6,6 +6,7 @@ include_once 'php/autoload.php';
 
 function loadInit() {
     ConfigAdmin::loadInit();
+    Config::loadShortcodes();
 }
 
 add_action( 'init', 'loadInit' );
@@ -21,6 +22,16 @@ function loadWidget() {
 }
 
 add_action( 'widgets_init', 'loadWidget' );
+
+
+// Theme Functions -------
+
+function loadConfig() {
+    Config::loadScripts();
+}
+
+add_action( 'wp_enqueue_scripts', 'loadConfig');
+
 
 // silencer script  ----------------
 function jquery_migrate_silencer() {
@@ -51,51 +62,3 @@ function jquery_migrate_load_silencer($tag, $handle) {
 // for the admin, hook to admin_print_scripts
 //add_action('admin_print_scripts','jquery_migrate_echo_silencer');
 function jquery_migrate_echo_silencer() {echo jquery_migrate_silencer();}
-
-// Theme Functions -------
-
-function loadConfig() {
-    Config::loadScripts();
-}
-
-add_action( 'wp_enqueue_scripts', 'loadConfig');
-
-function subMenu($withImage) {
-    global $post;
-    
-    $mypages = get_pages('parent='.$post->ID.'&sort_column=menu_order');
-    
-    if ($withImage){
-        echo Menu::getMenuImg($mypages);
-    }
-    else {
-        echo Menu::getMenuSenzaImg($mypages);
-    }
-}
-
-
-function menuImage() {
-    global $showMenu;
-    if (isset($showMenu)){ subMenu(true); }
-}
-
-function menuSenzaImage() {
-    global $showMenu;
-    if (isset($showMenu)){ subMenu(false); }
-}
-
-function backMenuInterno() {
-    global $post;
-    echo Menu::getMenuBack($post);
-
-}
-
-function addShort() {
-    add_shortcode('menu_image','menuImage');
-    add_shortcode('menu_senza_image', 'menuSenzaImage');
-    add_shortcode('back_menu_interno', 'backMenuInterno');
-}
-
-add_action( 'init', 'addShort' );
-
-//$shortcodes = new Shortcodes($post);
