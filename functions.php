@@ -32,7 +32,6 @@ function loadConfig() {
 
 add_action( 'wp_enqueue_scripts', 'loadConfig');
 
-
 // silencer script  ----------------
 function jquery_migrate_silencer() {
     // create function copy
