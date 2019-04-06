@@ -1,8 +1,8 @@
 <?php
 
 //Var
-  const linkImage = "http://www.tieffeu.com/wordpress/wp-content/uploads/2019/03/noImg.png";
-  const linkImage404 = "http://www.tieffeu.com/wordpress/wp-content/uploads/2019/03/noImg2.jpg";
+  const linkImage = "http://www.tieffeu.com/wp-content/uploads/2019/03/noImg.png";
+  const linkImage404 = "http://www.tieffeu.com/wp-content/uploads/2019/03/noImg2.jpg";
   const hook1 = "[salta]";
 
 function autoload($class) {
