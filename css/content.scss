@@ -58,12 +58,8 @@ p {
     max-width: 100%;
   }
 
-  .easingslider {
-    margin: auto;
-  }
-
-  .easingslider-slide {
-    background-color: black !important;
+  .wp-block-file {
+    margin-bottom: 20px;
   }
 
 }
@@ -135,6 +131,13 @@ figure figcaption {
 
 /* ------- Slide Show--------*/
 
+.easingslider {
+  margin: auto;
+}
+
+.easingslider-slide {
+  background-color: black !important;
+}
 
 
 /* ------- Table--------*/

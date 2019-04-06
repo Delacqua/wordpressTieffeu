@@ -151,10 +151,8 @@ p {
   .content img {
     margin-top: 20px;
     max-width: 100%; }
-  .content .easingslider {
-    margin: auto; }
-  .content .easingslider-slide {
-    background-color: black !important; }
+  .content .wp-block-file {
+    margin-bottom: 20px; }
 
 figure figcaption {
   background-color: rgba(77, 77, 77, 0.3) !important;
@@ -231,6 +229,12 @@ figure figcaption {
   .video-container iframe, .video-container object, .video-container embed {
     width: 98%; } }
 /* ------- Slide Show--------*/
+.easingslider {
+  margin: auto; }
+
+.easingslider-slide {
+  background-color: black !important; }
+
 /* ------- Table--------*/
 .wp-block-table {
   border-collapse: collapse; }
