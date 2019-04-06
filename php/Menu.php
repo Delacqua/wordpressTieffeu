@@ -8,6 +8,16 @@ class Menu {
 		return $post;
 	}
 
+	public static function getShortcodes() {
+		$shortcodes = array( $shortcode1 = new Shortcode('menu_image','Menu','getMenuImg'), 
+						$shortcode2 = new Shortcode('menu_senza_image','Menu','getMenuSenzaImg'),
+						$shortcode3 = new Shortcode('menu_senza_testo','Menu','getMenuSenzaTesto'),
+						$shortcode4 = new Shortcode('back_menu_interno','Menu','getMenuBack'),
+						$shortcode5 = new Shortcode('menu_progetti','Menu','getMenuProgetti'));
+		
+		return $shortcodes;
+	}
+
 	public static function getMenuImg() {
 		if (!$post = self::checkIsAdmin()) {return;}
 		$subMenu = new SubMenuImage($post);
@@ -30,14 +40,16 @@ class Menu {
 
 	public static function getMenuBack() {
 		if (!$post = self::checkIsAdmin()) {return;}
+		$menu = new MenuBack();
 
-	    if ($post->post_parent) {
-	        //echo "<a href=".get_home_url().">< Home</a>";
-	        echo "<a href=".get_permalink( $post->post_parent ).">< Indietro</a>";
-	    }
-	    else {
-	        echo "<a href=".get_home_url().">< Home</a>";
-	    }
+		echo $menu->getMenu($post);
+	}
+
+	public static function getMenuProgetti( $atts, $content = null) {
+		if (!$post = self::checkIsAdmin()) {return;}
+		$subMenu = new SubMenuProgetti();
+
+		return $subMenu->getSubMenu($atts, $content);
 
 	}
 }

@@ -18,9 +18,11 @@ class Config {
 	} 
 
 	public static function loadShortcodes() {
-	    add_shortcode('menu_image', array("Menu", 'getMenuImg'));
-	    add_shortcode('menu_senza_image', array("Menu", 'getMenuSenzaImg'));
-	    add_shortcode('menu_senza_testo', array("Menu", 'getMenuSenzaTesto'));
-	    add_shortcode('back_menu_interno', array("Menu", 'getMenuBack'));
+		$shortcodesMenu = Menu::getShortcodes();
+
+		foreach ($shortcodesMenu as $shortcode) {
+			add_shortcode($shortcode->getSlug(),array($shortcode->getClass(), $shortcode->getCall()));
+		}
+	    
 	} 
 }
