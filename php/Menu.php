@@ -3,34 +3,33 @@
 class Menu {
 
 	private static function checkIsAdmin() {
-		if ( is_admin()){ return;}		
+		if ( is_admin()){ return false;}		
 		global $post;
 		return $post;
 	}
 
 	public static function getMenuImg() {
-		$post = self::checkIsAdmin();
+		if (!$post = self::checkIsAdmin()) {return;}
 		$subMenu = new SubMenuImage($post);
 
 		echo $subMenu->getSubMenu();
 	}
 
 	public static function getMenuSenzaImg() {
-		$post = self::checkIsAdmin();
+		if (!$post = self::checkIsAdmin()) {return;}
 		$subMenu = new SubMenuSenzaImage($post);
-
 		echo $subMenu->getSubMenu();
 	}
 
 	public static function getMenuSenzaTesto() {
-		$post = self::checkIsAdmin();
+		if (!$post = self::checkIsAdmin()) {return;}
 		$subMenu = new SubMenuSenzaTesto($post);
 
 		echo $subMenu->getSubMenu();
 	}
 
 	public static function getMenuBack() {
-		$post = self::checkIsAdmin();
+		if (!$post = self::checkIsAdmin()) {return;}
 
 	    if ($post->post_parent) {
 	        //echo "<a href=".get_home_url().">< Home</a>";
