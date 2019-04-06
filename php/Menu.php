@@ -2,116 +2,35 @@
 
 class Menu {
 
-	private static $linkImage = linkImage;
-	private static $linkImage404 = linkImage404;
-	private static $hook1 = hook1;
-
-	private static function checkImage($img){
-
-	  if (empty($img) || $img === NULL) {
-	    $string = self::$linkImage404;
-	  }
-	  else {
-	    $string = $img[0];
-	  }
-
-	  return $string;
-	}
-
-	private static function addItem($itemNumber) {
-	    $_itemNumber = 0;
-	    $linkImage = "<img src=".self::$linkImage.">";
-	    $_html = "";
-	    
-	    while ($_itemNumber < $itemNumber) {
-	        $_html .= "<li>{$linkImage}</li>";
-	        $_itemNumber++;
-	    }
-
-	    return $_html;
-	}
-
-
-	private static function checkMenuMinimo($arr) {
-
-	    if (count($arr)<6) {
-	        return self::addItem(6 - count($arr));
-	    }
-
-	    if (count($arr) % 3) {
-	    	$repeat = 3 - (count($arr) % 3);
-	      	return self::addItem($repeat);
-	    }
-
-	    return "";
-	}
-
-	private static function closeMenu($_html) {
-		$html = "<div class='submenu'><ul>{$_html}</ul></div>";
-		$html .= "<script type='text/javascript'> checkMisure(); </script>";
-		return $html;
-	}
-
-	private static function changeHtml($phrase,$hook,$html) {
-		return str_replace($hook,$html,$phrase);
-	}
-
-	private static function menuConImg($value) {
-		$html = "";
-		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'post');
-		$html .= "<img src='".self::checkImage($thumb)."'>";
-		$title = self::changeHtml($value->post_title, self::$hook1,'<br/>');
-		$html .= "<h4><span class='textMenu'>".$title."</span></h4>";
-
-		return $html;
-	}
-
-	private static function menuSenzaImg($value) {
-		$title = self::changeHtml($value->post_title,self::$hook1,'<br/>');
-		$html = "<h5><span class='textMenu'>".$title."</span></h5>";
-		return $html;
-	}
-
-	private static function makeMenu($pages,$img) {
-
-		$html = "";
-
-	    foreach ($pages as $key => $value) {
-	    	$html .= "<li><a href='".$value->guid."'>";
-	    	if ($img) { $html .= self::menuConImg($value); }
-	        else { $html .= self::menuSenzaImg($value); }
-	        $html .= "</a></li>";
-	    }
-
-	    $html .= self::checkMenuMinimo($pages);
-	    $html = self::closeMenu($html);
-
-	    return $html;
-	   
+	private static function checkIsAdmin() {
+		if ( is_admin()){ return;}		
+		global $post;
+		return $post;
 	}
 
 	public static function getMenuImg() {
-		if ( is_admin()){ return;}
-		
-		global $post;
-    	$mypages = get_pages('parent='.$post->ID.'&sort_column=menu_order');
+		$post = self::checkIsAdmin();
+		$subMenu = new SubMenuImage($post);
 
-		echo self::makeMenu($mypages,true);
+		echo $subMenu->getSubMenu();
 	}
 
 	public static function getMenuSenzaImg() {
-		if ( is_admin()){ return;}
+		$post = self::checkIsAdmin();
+		$subMenu = new SubMenuSenzaImage($post);
 
-		global $post;
-    	$mypages = get_pages('parent='.$post->ID.'&sort_column=menu_order');
+		echo $subMenu->getSubMenu();
+	}
 
-		echo self::makeMenu($mypages,false);
+	public static function getMenuSenzaTesto() {
+		$post = self::checkIsAdmin();
+		$subMenu = new SubMenuSenzaTesto($post);
+
+		echo $subMenu->getSubMenu();
 	}
 
 	public static function getMenuBack() {
-		if ( is_admin()){ return;}
-
-		global $post;
+		$post = self::checkIsAdmin();
 
 	    if ($post->post_parent) {
 	        //echo "<a href=".get_home_url().">< Home</a>";
