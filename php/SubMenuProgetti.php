@@ -6,9 +6,6 @@ class SubMenuProgetti extends SubMenuBase {
 	private $subMenuTop;
 
 	public	function __construct(){
-		$this->hook2 = hook2;
-		$this->linkImage = linkImage;
-		$this->linkImage404 = linkImage404;
 		parent::__construct('');
 	}
 

@@ -10,10 +10,11 @@ abstract class SubMenuBase {
 	protected $subMenu;
 
 	public	function __construct($post){
-		$this->setPages($post);
 		$this->linkImage = linkImage;
 		$this->linkImage404 = linkImage404;
 		$this->hook1 = hook1;
+		$this->setPages($post);
+
 	}
 
 	abstract protected function setMenu($value);
