@@ -555,16 +555,18 @@ header {
 .menuProgetto {
   width: 100%;
   margin-bottom: 40px;
-  margin-top: 50px; }
+  margin-top: 50px;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center; }
   .menuProgetto ul {
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1 0 30%;
     width: 100%;
     max-width: 800px;
-    height: 45px; }
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
   .menuProgetto li {
     font-family: arial, sans-serif;
     font-size: 1.2em;
@@ -573,14 +575,14 @@ header {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
-    margin-left: 10px;
-    width: 50%; }
+    width: 80%;
+    height: 40px; }
   .menuProgetto a {
     display: -webkit-flex;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: center; }
+    justify-content: flex-start; }
   .menuProgetto .iconeMenuProgetto {
     width: 25px;
     height: 25px;

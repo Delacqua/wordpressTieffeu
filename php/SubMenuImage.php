@@ -2,7 +2,7 @@
 
 class SubMenuImage extends SubMenuBase {
 
-	private function setMenu($value) {
+	protected function setMenu($value) {
 		$html = "";
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'post');
 		$html .= "<img src='".$this->checkImage($thumb)."'>";

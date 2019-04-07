@@ -268,29 +268,30 @@
   width: 100%;
   margin-bottom: 40px;
   margin-top: 50px;
+  @include flex;
+  justify-content: center;
 
   ul {
-    @include flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1 0 30%;
     width: 100%;
     max-width: 800px;
-    height: 45px;
+    @include flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
   }
 
   li {
     @include fontNormaleG(1.2);
     margin: 0;
-    margin-left: 10px;
-    width: 50%;
+    width: 80%;
+    height: 40px;
   }
 
   a {
     @include flex;
     flex-wrap:nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .iconeMenuProgetto {
