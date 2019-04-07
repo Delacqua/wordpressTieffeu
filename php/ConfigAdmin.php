@@ -11,7 +11,8 @@ class ConfigAdmin {
 	private static function nuovoMenu() {
 		register_nav_menus(
 			array(
-			  'menuIndex' => __( 'Menu Index' )
+			  'menuIndex' => __( 'Menu Index' ),
+			  'menuProgetti' => __( 'Menu Progetti' )
 			)
 		);
 	}

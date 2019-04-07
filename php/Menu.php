@@ -19,37 +19,46 @@ class Menu {
 	}
 
 	public static function getMenuImg() {
-		if (!$post = self::checkIsAdmin()) {return;}
-		$subMenu = new SubMenuImage($post);
+		if ($post = self::checkIsAdmin()) {
+			$subMenu = new SubMenuImage($post);
 
-		echo $subMenu->getSubMenu();
+			echo $subMenu->getSubMenu();
+		}
+
 	}
 
 	public static function getMenuSenzaImg() {
-		if (!$post = self::checkIsAdmin()) {return;}
-		$subMenu = new SubMenuSenzaImage($post);
-		echo $subMenu->getSubMenu();
+		if ($post = self::checkIsAdmin()) {
+			$subMenu = new SubMenuSenzaImage($post);
+			echo $subMenu->getSubMenu();
+		}
+
 	}
 
 	public static function getMenuSenzaTesto() {
-		if (!$post = self::checkIsAdmin()) {return;}
-		$subMenu = new SubMenuSenzaTesto($post);
+		if ($post = self::checkIsAdmin()) {
+			$subMenu = new SubMenuSenzaTesto($post);
 
-		echo $subMenu->getSubMenu();
+			echo $subMenu->getSubMenu();
+		}
+
 	}
 
 	public static function getMenuBack() {
-		if (!$post = self::checkIsAdmin()) {return;}
-		$menu = new MenuBack();
+		if ($post = self::checkIsAdmin()) {
+			$menu = new MenuBack();
 
-		echo $menu->getMenu($post);
+			echo $menu->getMenu($post);
+		}
 	}
 
 	public static function getMenuProgetti( $atts, $content = null) {
-		if (!$post = self::checkIsAdmin()) {return;}
-		$subMenu = new SubMenuProgetti();
+		if ($post = self::checkIsAdmin()) {
+			$subMenu = new SubMenuProgetti();
 
-		return $subMenu->getSubMenu($atts, $content);
+			return $subMenu->getSubMenu($atts, $content);
+		}
+
 
 	}
 }

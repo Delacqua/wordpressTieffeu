@@ -1,6 +1,6 @@
 <?php
 
-class SubMenuBase {
+abstract class SubMenuBase {
 
 	protected $linkImage;
 	protected $linkImage404;
@@ -10,15 +10,30 @@ class SubMenuBase {
 	protected $subMenu;
 
 	public	function __construct($post){
-		$this->pages = get_pages('parent='.$post->ID.'&sort_column=menu_order');
+		$this->setPages($post);
 		$this->linkImage = linkImage;
 		$this->linkImage404 = linkImage404;
 		$this->hook1 = hook1;
 	}
 
+	abstract protected function setMenu($value);
+
+	protected function setPages($post) {
+		$this->pages = get_pages('parent='.$post->ID.'&sort_column=menu_order');
+		$html = "";
+
+	    foreach ($this->pages as $key => $value) {
+	    	$html .= "<li><a href='".$value->guid."'>";
+	    	$html .= $this->setMenu($value);
+	        $html .= "</a></li>";
+	    }
+
+	    $this->subMenu = $html;
+	}
+
 	protected function checkImage($img){
 
-	  if (empty($img) || $img === NULL) {
+	  if (empty($img) || $img === NULL || !$img) {
 	    $string = $this->linkImage404;
 	  }
 	  else {

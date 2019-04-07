@@ -210,6 +210,17 @@ figure figcaption {
     color: #999999;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; } }
+/* ------- Page Progetti --------*/
+.contentProgetti {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-left: 10px;
+  padding-right: 10px; }
+
 /* ------- Video Container--------*/
 .video-container {
   position: relative;
@@ -406,7 +417,9 @@ header {
 .submenu {
   display: -webkit-flex;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  width: 100%;
+  max-width: 800px; }
   .submenu ul {
     width: 100%;
     max-width: 650px;
@@ -451,8 +464,12 @@ header {
   .submenu h4 span {
     max-width: 100%;
     max-height: 100%;
-    font-size: 1.3rem;
-    line-height: 1.3rem;
+    font-family: arial, sans-serif;
+    font-size: 0.6em;
+    line-height: 1em;
+    color: #999999;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     padding-bottom: 5px;
     padding-top: 5px;
     text-shadow: -1px 0 0px #000000, 0 1px 0px #000000, 1px 0 0px #000000, 0 -1px 0 #000000;
@@ -468,12 +485,11 @@ header {
     padding: 5px;
     text-align: center;
     font-family: arial, sans-serif;
-    font-size: 1em;
+    font-size: 0.7em;
     line-height: 1em;
     color: #999999;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 1.5rem;
     color: #24ff00;
     text-shadow: -1px 0 0px #bbbbbb, 0 1px 0px #bbbbbb, 1px 0 0px #bbbbbb, 0 -1px 0 #bbbbbb; }
   .submenu li:nth-child(1n) {
@@ -494,17 +510,17 @@ header {
   .submenu li:nth-child(6n) {
     border-color: #008b00;
     background: #67ff67; }
-  .submenu li:nth-child(1n) h4 {
+  .submenu li:nth-child(1n) h4 span {
     color: #f3e40f; }
-  .submenu li:nth-child(2n) h4 {
+  .submenu li:nth-child(2n) h4 span {
     color: #ee0300; }
-  .submenu li:nth-child(3n) h4 {
+  .submenu li:nth-child(3n) h4 span {
     color: #07a2ff; }
-  .submenu li:nth-child(4n) h4 {
+  .submenu li:nth-child(4n) h4 span {
     color: #ffffff; }
-  .submenu li:nth-child(5n) h4 {
+  .submenu li:nth-child(5n) h4 span {
     color: #fa13af; }
-  .submenu li:nth-child(6n) h4 {
+  .submenu li:nth-child(6n) h4 span {
     color: #008b00; }
   .submenu li:hover h4 {
     background-color: rgba(0, 153, 255, 0.3); }
@@ -535,6 +551,43 @@ header {
     line-height: 0.9rem;
     text-shadow: none;
     font-weight: bolder; } }
+/* --------- submenu progetti -------- */
+.menuProgetto {
+  width: 100%;
+  margin-bottom: 40px;
+  margin-top: 50px; }
+  .menuProgetto ul {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 30%;
+    width: 100%;
+    max-width: 800px;
+    height: 45px; }
+  .menuProgetto li {
+    font-family: arial, sans-serif;
+    font-size: 1.2em;
+    line-height: 1em;
+    color: #999999;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    margin-left: 10px;
+    width: 50%; }
+  .menuProgetto a {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center; }
+  .menuProgetto .iconeMenuProgetto {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    background: url("http://www.tieffeu.com/wp-content/uploads/2019/04/noimgp.jpg");
+    border: 2px solid #008b00; }
+
 /*-------Effects Menu -------*/
 .flash2 {
   -webkit-animation: flash ease 1s infinite;

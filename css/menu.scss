@@ -116,6 +116,8 @@
 .submenu {
   @include flex;
   justify-content: center;
+  width: 100%;
+  max-width: 800px;
 
   ul {
       width: 100%;
@@ -171,8 +173,7 @@
   h4 span {
       max-width: 100%;
       max-height: 100%;
-      font-size: 1.3rem;
-      line-height: 1.3rem;
+      @include fontNormaleG(0.6);
       padding-bottom: 5px;
       padding-top: 5px;
       text-shadow: -1px 0 0px #000000, 0 1px 0px #000000, 1px 0 0px #000000, 0 -1px 0 #000000;
@@ -191,8 +192,7 @@
       max-height: 100%;
       padding: 5px;
       text-align: center;
-      @include fontNormaleG;
-      font-size: 1.5rem;
+      @include fontNormaleG(0.7);
       color: #24ff00;
       text-shadow: -1px 0 0px #bbbbbb, 0 1px 0px #bbbbbb, 1px 0 0px #bbbbbb, 0 -1px 0 #bbbbbb;
   }
@@ -204,12 +204,12 @@
  li:nth-child(5n) { border-color: #fa13af; background: #ff8cda;}
  li:nth-child(6n) { border-color: #008b00; background: #67ff67}
 
- li:nth-child(1n) h4 { color: #f3e40f; }
- li:nth-child(2n) h4 { color: #ee0300; }
- li:nth-child(3n) h4 { color: #07a2ff; }
- li:nth-child(4n) h4 { color: #ffffff; }
- li:nth-child(5n) h4 { color: #fa13af; }
- li:nth-child(6n) h4 { color: #008b00; }
+ li:nth-child(1n) h4 span { color: #f3e40f; }
+ li:nth-child(2n) h4 span { color: #ee0300; }
+ li:nth-child(3n) h4 span { color: #07a2ff; }
+ li:nth-child(4n) h4 span { color: #ffffff; }
+ li:nth-child(5n) h4 span { color: #fa13af; }
+ li:nth-child(6n) h4 span { color: #008b00; }
 
   li:hover h4{
     background-color: rgba(0,153,255,0.3);
@@ -262,6 +262,46 @@
   } 
 }
 
+/* --------- submenu progetti -------- */
+
+.menuProgetto {
+  width: 100%;
+  margin-bottom: 40px;
+  margin-top: 50px;
+
+  ul {
+    @include flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 30%;
+    width: 100%;
+    max-width: 800px;
+    height: 45px;
+  }
+
+  li {
+    @include fontNormaleG(1.2);
+    margin: 0;
+    margin-left: 10px;
+    width: 50%;
+  }
+
+  a {
+    @include flex;
+    flex-wrap:nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .iconeMenuProgetto {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    background: url('http://www.tieffeu.com/wp-content/uploads/2019/04/noimgp.jpg');
+    border: 2px solid #008b00;
+  }
+
+}
 
 
 /*-------Effects Menu -------*/

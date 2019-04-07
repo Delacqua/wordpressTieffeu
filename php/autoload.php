@@ -4,6 +4,7 @@
   const linkImage = "http://www.tieffeu.com/wp-content/uploads/2019/03/noImg.png";
   const linkImage404 = "http://www.tieffeu.com/wp-content/uploads/2019/03/noImg2.jpg";
   const hook1 = "[salta]";
+  const hook2 = "separare";
 
 function autoload($class) {
     $cartelle = array(

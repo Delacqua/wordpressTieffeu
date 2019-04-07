@@ -2,7 +2,7 @@
 
 class SubMenuImage extends SubMenuBase {
 
-	private function menuConImg($value) {
+	private function setMenu($value) {
 		$html = "";
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($value->ID), 'post');
 		$html .= "<img src='".$this->checkImage($thumb)."'>";
@@ -12,16 +12,4 @@ class SubMenuImage extends SubMenuBase {
 		return $html;
 	}
 	
-	public function __construct($post){
-		parent::__construct( $post );
-		$html = "";
-
-	    foreach ($this->pages as $key => $value) {
-	    	$html .= "<li><a href='".$value->guid."'>";
-	    	$html .= $this->menuConImg($value);
-	        $html .= "</a></li>";
-	    }
-
-	    $this->subMenu = $html;
-	}
 }
