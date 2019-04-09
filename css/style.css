@@ -470,7 +470,8 @@ header {
     padding-top: 5px;
     text-shadow: -1px 0 0px #000000, 0 1px 0px #000000, 1px 0 0px #000000, 0 -1px 0 #000000;
     text-align: center;
-    background-color: rgba(0, 20, 51, 0.6); }
+    background-color: rgba(0, 20, 51, 0.6);
+    color: white; }
   .submenu h5 {
     justify-content: center;
     align-items: center;
@@ -506,18 +507,6 @@ header {
   .submenu li:nth-child(6n) {
     border-color: #008b00;
     background: #67ff67; }
-  .submenu li:nth-child(1n) h4 span {
-    color: #f3e40f; }
-  .submenu li:nth-child(2n) h4 span {
-    color: #ee0300; }
-  .submenu li:nth-child(3n) h4 span {
-    color: #07a2ff; }
-  .submenu li:nth-child(4n) h4 span {
-    color: #ffffff; }
-  .submenu li:nth-child(5n) h4 span {
-    color: #fa13af; }
-  .submenu li:nth-child(6n) h4 span {
-    color: #008b00; }
   .submenu li:hover h4 {
     background-color: rgba(0, 153, 255, 0.3); }
 

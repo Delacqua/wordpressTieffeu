@@ -179,6 +179,7 @@
       text-shadow: -1px 0 0px #000000, 0 1px 0px #000000, 1px 0 0px #000000, 0 -1px 0 #000000;
       text-align: center;
       background-color: rgba(0, 20, 51, 0.6);
+      color: white;
   }
 
   h5 {
@@ -203,13 +204,6 @@
  li:nth-child(4n) { border-color: #ffffff; background: #afafaf;}
  li:nth-child(5n) { border-color: #fa13af; background: #ff8cda;}
  li:nth-child(6n) { border-color: #008b00; background: #67ff67}
-
- li:nth-child(1n) h4 span { color: #f3e40f; }
- li:nth-child(2n) h4 span { color: #ee0300; }
- li:nth-child(3n) h4 span { color: #07a2ff; }
- li:nth-child(4n) h4 span { color: #ffffff; }
- li:nth-child(5n) h4 span { color: #fa13af; }
- li:nth-child(6n) h4 span { color: #008b00; }
 
   li:hover h4{
     background-color: rgba(0,153,255,0.3);
