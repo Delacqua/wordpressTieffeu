@@ -82,38 +82,6 @@ h1 {
   -moz-osx-font-smoothing: grayscale;
   color: #d9d9d9; }
 
-h2 {
-  font-family: arial, sans-serif;
-  font-size: 2.7em;
-  line-height: 1em;
-  color: #999999;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-h3 {
-  font-family: arial, sans-serif;
-  font-size: 2.4em;
-  line-height: 1em;
-  color: #999999;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-h4 {
-  font-family: arial, sans-serif;
-  font-size: 2.25em;
-  line-height: 1em;
-  color: #999999;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-h5 {
-  font-family: arial, sans-serif;
-  font-size: 2.1em;
-  line-height: 1em;
-  color: #999999;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
 strong {
   font-weight: 900;
   color: #666666; }
@@ -146,6 +114,34 @@ p {
   .content h1, .content h2, .content h3, .content h4, .content h5 {
     text-align: center;
     margin-top: 1em; }
+  .content h2 {
+    font-family: arial, sans-serif;
+    font-size: 2.4em;
+    line-height: 1em;
+    color: #999999;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .content h3 {
+    font-family: arial, sans-serif;
+    font-size: 2.1em;
+    line-height: 1em;
+    color: #999999;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .content h4 {
+    font-family: arial, sans-serif;
+    font-size: 1.95em;
+    line-height: 1em;
+    color: #999999;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .content h5 {
+    font-family: arial, sans-serif;
+    font-size: 1.8em;
+    line-height: 1em;
+    color: #999999;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
   .content figure {
     text-align: center; }
   .content img {

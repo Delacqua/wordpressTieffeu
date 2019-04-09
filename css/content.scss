@@ -4,18 +4,7 @@ h1 {
   @include fontTitoloG;
   color: #d9d9d9;
 }
-h2 {
-  @include fontTitoloG(0.9);
-}
-h3 {
-  @include fontTitoloG(0.8);
-}
-h4 {
-  @include fontTitoloG(0.75);
-}
-h5 {
-  @include fontTitoloG(0.7);
-}
+
 strong {
   font-weight: 900;
   color:darken($font-base-color, 20%);
@@ -48,6 +37,11 @@ p {
     text-align: center;
     margin-top: $font-base-size;
   }
+
+  h2 { @include fontTitoloG(0.8); }
+  h3 { @include fontTitoloG(0.7); }
+  h4 { @include fontTitoloG(0.65); }
+  h5 { @include fontTitoloG(0.6); }
 
   figure {
     text-align: center;
